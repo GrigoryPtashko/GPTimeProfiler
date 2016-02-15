@@ -1,0 +1,10 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+
+target 'GPTimeProfiler_Tests', :exclusive => true do
+  pod 'GPTimeProfiler', :path => '../'
+
+  pod 'Specta'
+  pod 'Expecta'
+end
