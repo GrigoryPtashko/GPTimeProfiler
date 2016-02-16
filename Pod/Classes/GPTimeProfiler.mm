@@ -1,9 +1,23 @@
+// GPTimeProfiler.mm
+// Copyright (c) 2015-2016 Grigory Ptashko <grigory.ptashko@gmail.com>
 //
-//  GPTimeProfiler.mm
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
 //
-//  Created by Grigory Ptashko on 19.09.15.
-//  Copyright © 2016 Grigory Ptashko. All rights reserved.
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
 //
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import "GPTimeProfiler.h"
 
@@ -17,7 +31,7 @@
 
 @implementation GPTimeProfiler
 
-- (id) init:(NSString *)name start:(BOOL) start {
+- (instancetype) init:(NSString *)name start:(BOOL) start {
     self.name = name;
     self.cyclesCount = 0;
 
@@ -32,10 +46,8 @@
     self.totalTime = 0;
 }
 
-- (id) init:(NSString *) name {
-    self.name = name;
-
-    return self;
+- (instancetype) init:(NSString *) name {
+    return [self init:name start:false];
 }
 
 - (void) start {
@@ -48,12 +60,13 @@
 }
 
 - (NSString *) averageTimeS {
-    return [NSString stringWithFormat:@"%@ s: %.2f", self.name, (double) self.totalTime / (double) self.cyclesCount];
+    return [NSString stringWithFormat:@"%@ s: %.2f", self.name,
+            (double) self.totalTime / (double) self.cyclesCount];
 }
 
 - (NSString *) averageTimeMs {
-    return [NSString stringWithFormat:@"%@ ms: %.2f", self.name, ((double) self.totalTime / (double) self.cyclesCount)
-            * 1000];
+    return [NSString stringWithFormat:@"%@ ms: %.2f", self.name,
+            ((double) self.totalTime / (double) self.cyclesCount) * 1000];
 }
 
 @end
