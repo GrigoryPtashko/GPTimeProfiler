@@ -1,6 +1,6 @@
 # GPTimeProfiler
 
-[![CI Status](http://img.shields.io/travis/Grigory Ptashko/GPTimeProfiler.svg?style=flat)](https://travis-ci.org/Grigory Ptashko/GPTimeProfiler)
+[![CI Status](http://img.shields.io/travis/GrigoryPtashko/GPTimeProfiler.svg?style=flat)](https://travis-ci.org/GrigoryPtashko/GPTimeProfiler)
 [![Version](https://img.shields.io/cocoapods/v/GPTimeProfiler.svg?style=flat)](http://cocoapods.org/pods/GPTimeProfiler)
 [![License](https://img.shields.io/cocoapods/l/GPTimeProfiler.svg?style=flat)](http://cocoapods.org/pods/GPTimeProfiler)
 [![Platform](https://img.shields.io/cocoapods/p/GPTimeProfiler.svg?style=flat)](http://cocoapods.org/pods/GPTimeProfiler)

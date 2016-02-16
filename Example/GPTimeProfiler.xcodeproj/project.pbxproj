@@ -13,7 +13,6 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		C111F605F30A3E10F0A18FE9 /* Pods_GPTimeProfiler_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A0C012F52DCE841B366A73 /* Pods_GPTimeProfiler_Tests.framework */; };
-		FA9F0D331C737C6700DB44C2 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = FA9F0D321C737C6700DB44C2 /* .travis.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +31,7 @@
 		8AB6B08E7774AADFBFBCDAB6 /* Pods-GPTimeProfiler_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPTimeProfiler_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GPTimeProfiler_Tests/Pods-GPTimeProfiler_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC3C4172684846BD5EE4B0B1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D2A0C012F52DCE841B366A73 /* Pods_GPTimeProfiler_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GPTimeProfiler_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA9F0D321C737C6700DB44C2 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		FA9F0D341C737EDA00DB44C2 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +111,7 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				FA9F0D321C737C6700DB44C2 /* .travis.yml */,
+				FA9F0D341C737EDA00DB44C2 /* .travis.yml */,
 				3DEABDC6E82A43E7DDD49043 /* GPTimeProfiler.podspec */,
 				7C6A9D37BC5CBCE238F6DE02 /* README.md */,
 				CC3C4172684846BD5EE4B0B1 /* LICENSE */,
@@ -181,7 +180,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA9F0D331C737C6700DB44C2 /* .travis.yml in Resources */,
 				6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
