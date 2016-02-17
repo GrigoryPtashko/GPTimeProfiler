@@ -5,17 +5,26 @@
 [![License](https://img.shields.io/cocoapods/l/GPTimeProfiler.svg?style=flat)](http://cocoapods.org/pods/GPTimeProfiler)
 [![Platform](https://img.shields.io/cocoapods/p/GPTimeProfiler.svg?style=flat)](http://cocoapods.org/pods/GPTimeProfiler)
 
-profile cycle - time between start and stop
+`GPTimeProfiler` is used to track the execution time of an arbitrary piece of code. The time is tracked during one
+profile cycle. One cycle is the time between two method calls `-start` and `-stop`. The object of the `GPTimeProfiler`
+class stores the total amount of profile cycles. With every call to the `-start` method the amount of profile
+cycles is increased by 1. `GPTimeProfiler` can be used to determine the overall time of execution or the average
+time of one profile cycle. It can also be used to track the amount of profile cycles.
 
-`GPTimeProfiler` is used to track the execution time of an arbitrary piece of code. It can be used to determine the overall time of execution or the average time of one cycle of execution. It can also be used to track the amount of execution cycles. It has the convenience methods to log the tracked time in seconds and milliseconds. The time tracking part of the `GPTimeProfiler` is based on the `CFAbsoluteTimeGetCurrent()` function. The `GPTimeProfiler` can be used in Objective-C and Swift based applications.
+It has the convenience methods to get the tracked time in seconds and milliseconds as `NSString`.
+
+The time tracking part of the `GPTimeProfiler` is based on the `CFAbsoluteTimeGetCurrent()` function.
+The `GPTimeProfiler` can be used in Objective-C and Swift based applications.
 
 ## Usage
 
-
-
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+To add `GPTimeProfiler` to your Swift based project add this to the bridging header:
+
+```objective-c
+#import "GPTimeProfiler.h"
+```
 
 ## Installation
 
