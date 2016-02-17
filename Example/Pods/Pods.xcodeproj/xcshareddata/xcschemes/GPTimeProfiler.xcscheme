@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "67918897611C97431DC2CBAD9DFDBA95"
+               BlueprintIdentifier = "FA593899D41EB016CC2073BB0897F116"
                BuildableName = "GPTimeProfiler.framework"
                BlueprintName = "GPTimeProfiler"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "67918897611C97431DC2CBAD9DFDBA95"
+            BlueprintIdentifier = "FA593899D41EB016CC2073BB0897F116"
             BuildableName = "GPTimeProfiler.framework"
             BlueprintName = "GPTimeProfiler"
             ReferencedContainer = "container:Pods.xcodeproj">

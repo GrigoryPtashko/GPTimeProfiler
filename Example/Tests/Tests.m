@@ -8,22 +8,28 @@
 
 // https://github.com/Specta/Specta
 
-SpecBegin(InitialSpecs)
+#import "GPTimeProfiler.h"
 
-describe(@"these will pass", ^{
+SpecBegin(GPTimeProfiler)
+
+describe(@"Tests", ^{
     
-    it(@"can do maths", ^{
-        expect(1).beLessThan(23);
+    it(@"can profile only one cycle", ^{
+        GPTimeProfiler *p = [[GPTimeProfiler alloc] init:@"name"];
+        [p start];
+        [p stop];
+
+        expect(p.cyclesCount).to.equal(1);
     });
-    
-    it(@"can read", ^{
-        expect(@"team").toNot.contain(@"I");
-    });
-    
-    it(@"will wait and succeed", ^{
-        waitUntil(^(DoneCallback done) {
-            done();
-        });
+
+    it(@"can count the amount of cycle", ^{
+        GPTimeProfiler *p = [[GPTimeProfiler alloc] init:@"name"];
+        [p start];
+        [p stop];
+        [p start];
+        [p stop];
+
+        expect(p.cyclesCount).to.equal(2);
     });
 });
 
