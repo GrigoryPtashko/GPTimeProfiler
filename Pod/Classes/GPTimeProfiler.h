@@ -23,12 +23,16 @@
 #import <Foundation/Foundation.h>
 
 /**
- `GPTimeProfiler` is used to track the execution time of an arbitrary piece of code.
- It can be be used to determine the overall time of execution or the average time of
- one cycle of execution. It can also be used to track the amount of execution cycles.
- It has the convenience methods to log the tracked time in seconds and milliseconds.
- The time tracking part of the `GPTimeProfiler` is based on the `CFAbsoluteTimeGetCurrent()`
- function. The `GPTimeProfiler` can be used in Objective-C and Swift based applications.
+ `GPTimeProfiler` is used to track the execution time of an arbitrary piece of code. The time is tracked during one
+ profile cycle. One cycle is the time between two method calls `-start` and `-stop`. The object of the `GPTimeProfiler`
+ class stores the total amount of profile cycles. With every call to the `-start` method the amount of profile
+ cycles is increased by 1. `GPTimeProfiler` can be used to determine the overall time of execution or the average
+ time of one profile cycle. It can also be used to track the amount of profile cycles.
+
+ It has the convenience methods to get the tracked time in seconds and milliseconds as `NSString`.
+
+ The time tracking part of the `GPTimeProfiler` is based on the `CFAbsoluteTimeGetCurrent()` function.
+ The `GPTimeProfiler` can be used in Objective-C and Swift based applications.
  */
 @interface GPTimeProfiler : NSObject
 
@@ -40,7 +44,12 @@
 @property (nonatomic) int cyclesCount;
 
 /**
- Initializes an `GPTimeProfiler` object with the specified name and starts time tracking if needed.
+ The total time of all of the profile cycles.
+ */
+@property (nonatomic) CFTimeInterval totalTime;
+
+/**
+ Initializes a `GPTimeProfiler` object with the specified name and starts time tracking if needed.
  
  @param name name of the profiler
  @param start immediatelly start time tracking if `start` is `true`
@@ -59,27 +68,36 @@
 - (nonnull instancetype) init:(nullable NSString *) name;
 
 /**
- Increments the `cyclesCount` by 1.
+ Starts the next profile cycle. Increments the `cyclesCount` by 1.
  */
 - (void) start;
 
 /**
-
+ Stops time tracking of the current profile cycle.
  */
 - (void) stop;
 
 /**
-
+ Resets the `cyclesCount` and the `totalTime` to 0. The method is useful when you don't want to create
+ a new `GPTimeProfile` object but instead want to reuse the old one.
  */
 - (void) reset;
 
 /**
-
+ Avergare time in seconds of one profile cycle with the name of the profiler. For example, for console logging.
+ 
+ @see name
+ 
+ @return a string of the format "<profiler name> s: 100.02"
  */
 - (nonnull NSString *) averageTimeS;
 
 /**
+ Avergare time in milliseconds of one profile cycle with the name of the profiler. For example, for console logging.
 
+ @see name
+
+ @return a string of the format "<profiler name> ms: 100.02"
  */
 - (nonnull NSString *) averageTimeMs;
 

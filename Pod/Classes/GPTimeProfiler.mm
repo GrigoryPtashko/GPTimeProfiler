@@ -24,7 +24,6 @@
 @interface GPTimeProfiler ()
 
 @property (nonatomic) CFTimeInterval clockStart;
-@property (nonatomic) CFTimeInterval totalTime;
 @property (nonatomic, copy) NSString *name;
 
 @end
