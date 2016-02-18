@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "GPTimeProfiler"
-  s.version          = "1.0.1"
+  s.version          = "1.0.2"
   s.summary          = "A simple time profiler for Cocoa-based software (Objective-C, Objective-C++, Swift)."
 
   s.description      = <<-DESC
