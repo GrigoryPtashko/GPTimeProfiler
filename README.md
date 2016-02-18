@@ -7,7 +7,7 @@
 
 `GPTimeProfiler` is used to track the execution time of an arbitrary piece of code. The time is tracked during one
 profile cycle. One cycle is the time between two method calls `-start` and `-stop`. The object of the `GPTimeProfiler`
-class stores the total amount of profile cycles. With every call to the `-start` method the amount of profile
+class stores the total amount of profile cycles. With every call to the `-stop` method the amount of profile
 cycles is increased by 1. `GPTimeProfiler` can be used to determine the overall time of execution or the average
 time of one profile cycle. It can also be used to track the amount of profile cycles.
 
@@ -17,6 +17,8 @@ The time tracking part of the `GPTimeProfiler` is based on the `CFAbsoluteTimeGe
 The `GPTimeProfiler` can be used in Objective-C and Swift based applications.
 
 ## Usage
+
+Use the `GPTimeProfiler` to profile one and more cycles:
 
 ```objective-c
 GPTimeProfiler *p = [[GPTimeProfiler alloc] init:@"name"];
@@ -29,6 +31,8 @@ for (int i = 0; i < 100; i++) {
 NSLog(@"%@", [p averageTimeS]);
 NSLog(@"%@", [p averageTimeMs]);
 ```
+
+And the output will be similar to:
 
 ```console
 2016-02-18 14:39:05.124 xctest[15556:688513] name s: 0.11

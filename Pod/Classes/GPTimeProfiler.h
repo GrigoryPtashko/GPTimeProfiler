@@ -37,9 +37,9 @@
 @interface GPTimeProfiler : NSObject
 
 /**
- Stores the number of times the `start` method was called.
+ Stores the number of times the `-stop` method was called.
  
- @see -start
+ @see -stop
  */
 @property (nonatomic) int cyclesCount;
 
