@@ -18,7 +18,7 @@ The `GPTimeProfiler` can be used in Objective-C and Swift based applications.
 
 ## Usage
 
-Use the `GPTimeProfiler` to profile one and more cycles:
+Use the `GPTimeProfiler` to profile one or more cycles:
 
 ```objective-c
 GPTimeProfiler *p = [[GPTimeProfiler alloc] init:@"name"];
