@@ -25,7 +25,7 @@
 /**
  `GPTimeProfiler` is used to track the execution time of an arbitrary piece of code. The time is tracked during one
  profile cycle. One cycle is the time between two method calls `-start` and `-stop`. The object of the `GPTimeProfiler`
- class stores the total amount of profile cycles. With every call to the `-start` method the amount of profile
+ class stores the total amount of profile cycles. With every call to the `-stop` method the amount of profile
  cycles is increased by 1. `GPTimeProfiler` can be used to determine the overall time of execution or the average
  time of one profile cycle. It can also be used to track the amount of profile cycles.
 
@@ -68,12 +68,12 @@
 - (nonnull instancetype) init:(nullable NSString *) name;
 
 /**
- Starts the next profile cycle. Increments the `cyclesCount` by 1.
+ Starts the next profile cycle.
  */
 - (void) start;
 
 /**
- Stops time tracking of the current profile cycle.
+ Stops time tracking of the current profile cycle. Increments the `cyclesCount` by 1.
  */
 - (void) stop;
 

@@ -18,6 +18,23 @@ The `GPTimeProfiler` can be used in Objective-C and Swift based applications.
 
 ## Usage
 
+```objective-c
+GPTimeProfiler *p = [[GPTimeProfiler alloc] init:@"name"];
+for (int i = 0; i < 100; i++) {
+    [p start];
+    [NSThread sleepForTimeInterval:0.01f];
+    [p stop];
+}
+
+NSLog(@"%@", [p averageTimeS]);
+NSLog(@"%@", [p averageTimeMs]);
+```
+
+```console
+2016-02-18 14:39:05.124 xctest[15556:688513] name s: 0.11
+2016-02-18 14:39:05.126 xctest[15556:688513] name ms: 107.37
+```
+
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 To add `GPTimeProfiler` to your Swift based project add this to the bridging header:
